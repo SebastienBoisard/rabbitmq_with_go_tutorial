@@ -39,7 +39,6 @@ func PlayTutorial01() {
 	}
 	fmt.Println("Queue declared")
 
-
 	fmt.Println("Publish message")
 	body := "Hello World!"
 	err = ch.Publish(
@@ -47,12 +46,12 @@ func PlayTutorial01() {
 		q.Name, // routing key
 		false,  // mandatory
 		false,  // immediate
-		amqp.Publishing {
+		amqp.Publishing{
 			ContentType: "text/plain",
 			Body:        []byte(body),
 		})
 	if err != nil {
 		log.Fatalf("Failed to publish a message [%s]", err)
 	}
-	fmt.Printf(" Message '%s' sent to RabbitMQ", body)
+	fmt.Printf("Message '%s' sent to RabbitMQ\n", body)
 }

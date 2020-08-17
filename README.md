@@ -26,3 +26,20 @@ To run an instance with others credentials
 
 ## Sending/Receiving messages
 
+
+
+Open a bash on the docker instance
+```
+> docker exec -ti rabbitmq-tutorial  bash
+```
+
+List all the open queues
+```
+> rabbitmqctl list_queues
+
+Timeout: 60.0 seconds ...
+Listing queues for vhost / ...
+name	messages
+hello	1
+```
+ 
